@@ -1,0 +1,44 @@
+<ion-menu [content]="nav">
+	<ion-header [class]="selectedTheme">
+		<ion-toolbar>
+			<ion-title>Navigation</ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-list>
+			<button ion-item>
+				<ion-icon name="md-home" item-left></ion-icon>
+				Home
+			</button>
+			<button ion-item>
+				<ion-icon name="md-contact" item-left></ion-icon>
+				My Profile
+			</button>
+			<button ion-item>
+				<ion-icon name="md-apps" item-left></ion-icon>
+				About
+			</button>
+			<button ion-item>
+				<ion-icon name="md-settings" item-left></ion-icon>
+				Settings
+			</button>
+			<button ion-item>
+				<ion-icon name="md-people" item-left></ion-icon>
+				Register
+			</button>
+			<button ion-item>
+				<ion-icon name="md-log-in" item-left></ion-icon>
+				Login
+			</button>
+			<button ion-item>
+				<ion-icon name="md-log-out" item-left></ion-icon>
+				Logout
+			</button>
+			<button ion-item>
+				<ion-icon name="md-exit" item-left></ion-icon>
+				Exit
+			</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #nav></ion-nav>
