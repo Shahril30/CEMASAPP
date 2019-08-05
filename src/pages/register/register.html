@@ -1,15 +1,31 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>register</ion-title>
+  	<ion-buttons end>
+  		<button ion-button menuToggle>
+  			<ion-icon name="menu"></ion-icon>
+  		</button>
+  	</ion-buttons>
+    <ion-title>Pendaftaran</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+	<ion-card id="formhome">
+	  	<ion-card-content id="formin">
+	 	<form #f="ngForm" (ngSubmit)="onRegister(f)"> 
+		<ion-list>
+			<h1>CEMAS Pendaftaran</h1><hr id="hrline"><br>
+			<ion-item id="inputbox">
+				<ion-label fixed>Email</ion-label>
+				<ion-input type="email" name="email" placeholder="Email" required ngModel></ion-input>
+			</ion-item>
+			<ion-item id="inputbox">
+				<ion-label fixed>Password</ion-label>
+				<ion-input type="password" name="password" placeholder="Password" required ngModel ></ion-input>
+			</ion-item>
+		</ion-list>
+		<button ion-button type="submit" class="formbutton" block [disabled]="!f.valid">Register</button>
+	</form>
+		</ion-card-content>
+ 	</ion-card>
 </ion-content>

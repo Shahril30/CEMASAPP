@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../../services/auth.services';
+import { LoadingController, AlertController } from 'ionic-angular';  
 
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-register',
@@ -14,11 +10,32 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor( 
+  	private authService: AuthService, 
+	private LoadingCtrl: LoadingController,
+	private alertCtrl: AlertController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
-  }
+ 	onRegister(form: NgForm){ //function for signup (relate with service)
+		
+		const loading = this.LoadingCtrl.create({ //for spinner
+			content: 'Signing you Up...'          // message on spinner
+		});
+		loading.present(); //to display loader
+
+		this.authService.signUp(form.value.email, form.value.password)
+			.then(data => {
+				loading.dismiss();
+			})
+			.catch(error => {
+				loading.dismiss();
+				const alert = this.alertCtrl.create({
+					title: 'Signup Failed!',
+					message: error.message,
+					buttons: ['OK']
+				});
+				alert.present(); // to load or show error message
+			});
+	}
 
 }
