@@ -4,14 +4,48 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HttpClientModule } from '@angular/common/http';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireModule} from 'angularfire2';
+
+import { AgmCoreModule } from '@agm/core';   // after install npm agm core import heres
+import { Geolocation } from '@ionic-native/geolocation'; // import geolocation
+
+import {MyApp} from './app.component';
+import {HomePage } from '../pages/home/home';
 import {AlertPage} from '../pages/alert/alert';
 import {ContactPage} from '../pages/contact/contact';
 import {HotlinesPage} from '../pages/hotlines/hotlines';
 import {MapPage} from '../pages/map/map';
 import {SettingsPage} from '../pages/settings/settings';
 import {TabsPage} from '../pages/tabs/tabs';
+
+import {AboutPage} from '../pages/about/about';
+import {QrcodePage} from '../pages/qrcode/qrcode';
+import {MyprofilePage} from '../pages/myprofile/myprofile';
+import {LoginPage} from '../pages/login/login';
+import {LogoutPage} from '../pages/logout/logout';
+import {RegisterPage} from '../pages/register/register';
+
+import { SettingsProvider } from '../providers/settings/settings';
+import { AuthService } from '../services/auth.services';
+import { ProfileService } from '../services/profile.service';
+import { PlacesService } from '../services/place.service';
+
+
+import { SmartAudioProvider } from '../providers/smart-audio/smart-audio';
+import{IonicStorageModule}from '@ionic/storage';
+const firebaseConfig={
+    apiKey: "AIzaSyD3HD6-SYijNmbosdZ4i5SnL4NdMhAqgfo",
+    authDomain: "cemas-ad8b3.firebaseapp.com",
+    databaseURL: "https://cemas-ad8b3.firebaseio.com",
+    projectId: "cemas-ad8b3",
+    storageBucket: "cemas-ad8b3.appspot.com",
+    messagingSenderId: "461302209770"
+};
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,11 +56,24 @@ import {TabsPage} from '../pages/tabs/tabs';
     HotlinesPage,
     MapPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    AboutPage,
+    QrcodePage,
+    MyprofilePage,
+    LoginPage,
+    LogoutPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCqMGwNhiorWjL21PpYIki_TkLJ11zGV-M'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,12 +84,24 @@ import {TabsPage} from '../pages/tabs/tabs';
     HotlinesPage,
     MapPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    AboutPage,
+    QrcodePage,
+    MyprofilePage,
+    LoginPage,
+    LogoutPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Geolocation,
+    SettingsProvider,
+    AuthService,
+    ProfileService,
+    PlacesService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SmartAudioProvider
   ]
 })
 export class AppModule {}
