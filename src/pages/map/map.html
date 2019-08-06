@@ -5,7 +5,7 @@
   			<ion-icon name="menu"></ion-icon>
   		</button>
   	</ion-buttons>
-    <ion-title>Map</ion-title>
+    <ion-title>Panic</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -27,10 +27,14 @@
 	</ion-row>
 	<ion-row>
 		<ion-col>
-			<button ion-button block color="secondary" (click)="onConfirm()" [disabled]="!marker">Confirm</button>
+			<button ion-button block type="button" icon-left><ion-icon name="locate"></ion-icon>
+				Locate Me
+			</button>
 		</ion-col>
+	</ion-row>
+	<ion-row>
 		<ion-col>
-			<button ion-button block color="danger" (click)="onAbort()">Abort</button>
+			<button ion-button block color="secondary" (click)="onConfirm()" [disabled]="!marker">Send Help</button>
 		</ion-col>
 	</ion-row>
 </ion-card-content>

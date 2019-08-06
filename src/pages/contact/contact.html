@@ -11,4 +11,16 @@
 
 <ion-content padding>
 <h2>Contact</h2><hr>
+<ion-item *ngFor="let contact of everybody | async">
+
+      <ion-icon item-start *ngIf="contact.phoneNumbers"
+        (click)="callContact(contact.phoneNumbers[0].value)"
+        ios="ios-call"
+        md="md-call"
+        tappable></ion-icon>
+
+      <ion-label>
+        {{contact.name.givenName}}
+      </ion-label>
+    </ion-item>
 </ion-content>

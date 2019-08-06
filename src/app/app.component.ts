@@ -35,15 +35,17 @@ export class MyApp {
   loginPage:any = LoginPage;
 
   isAuthenticated = false;
-
+  selectedTheme: String;
   @ViewChild('nav') nav: NavController;
   constructor(
     platform: Platform, 
     statusBar: StatusBar, 
     private menuCtrl : MenuController,
     private settings: SettingsProvider,
+
     private authService: AuthService,
     splashScreen: SplashScreen) {
+     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
     platform.ready().then(() => {
     firebase.initializeApp({  //Firebase (dari web masukkan sini)
     apiKey: "AIzaSyD3HD6-SYijNmbosdZ4i5SnL4NdMhAqgfo",
@@ -61,7 +63,7 @@ export class MyApp {
       }
       else {
         this.isAuthenticated = false;
-        this.nav.setRoot(this.mapPage);
+        this.nav.setRoot(this.rootPage);
       }
     }); 
 

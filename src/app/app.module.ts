@@ -10,6 +10,8 @@ import {AngularFireModule} from 'angularfire2';
 
 import { AgmCoreModule } from '@agm/core';   // after install npm agm core import heres
 import { Geolocation } from '@ionic-native/geolocation'; // import geolocation
+import { CallNumber } from '@ionic-native/call-number';
+import { Contacts } from '@ionic-native/contacts';
 
 import {MyApp} from './app.component';
 import {HomePage } from '../pages/home/home';
@@ -96,6 +98,8 @@ const firebaseConfig={
     StatusBar,
     SplashScreen,
     Geolocation,
+    CallNumber,
+    Contacts,
     SettingsProvider,
     AuthService,
     ProfileService,

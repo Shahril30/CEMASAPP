@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the HotlinesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CallNumber } from '@ionic-native/call-number';
 
 @Component({
   selector: 'page-hotlines',
@@ -14,11 +8,47 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HotlinesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+  	public navCtrl: NavController, 
+  	public navParams: NavParams, 
+  	private callNumber: CallNumber) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HotlinesPage');
-  }
+
+ 	onHotlines1(){
+ 	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
+
+	onHotlines2(){
+	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
+
+	onHotlines3(){
+	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
+
+	onHotlines4(){
+	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
+
+	onHotlines5(){
+	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
+
+	onHotlines6(){
+	this.callNumber.callNumber("+6737114683", true)
+      .then(() => console.log('Dialer Launched!'))
+      .catch(() => console.log('Error launching dialer'));
+	}
 
 }

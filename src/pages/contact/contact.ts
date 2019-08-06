@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ContactPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CallNumber } from '@ionic-native/call-number';
+import { Contacts } from '@ionic-native/contacts';
 
 @Component({
   selector: 'page-contact',
@@ -17,8 +12,5 @@ export class ContactPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactPage');
-  }
 
 }
