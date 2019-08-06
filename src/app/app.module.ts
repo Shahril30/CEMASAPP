@@ -74,7 +74,7 @@ const firebaseConfig={
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCqMGwNhiorWjL21PpYIki_TkLJ11zGV-M'
+      apiKey: 'AIzaSyBGmFaHP1_4WN8U7sm94tzDZTjYId611o0'
     })
   ],
   bootstrap: [IonicApp],
