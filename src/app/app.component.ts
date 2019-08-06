@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import {TabsPage} from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
+import { MapPage } from '../pages/map/map';
+
 import { MyprofilePage } from '../pages/myprofile/myprofile';
 import { AboutPage } from '../pages/about/about';
 import { SettingsProvider } from './../providers/settings/settings';
@@ -24,6 +26,8 @@ export class MyApp {
   showSplash = true;
   rootPage:any = TabsPage;
   homePage: any = HomePage;
+  mapPage: any = MapPage;
+
   myprofilePage: any = MyprofilePage;
   aboutPage: any = AboutPage;
   settingsPage: any = SettingsPage;
@@ -57,7 +61,7 @@ export class MyApp {
       }
       else {
         this.isAuthenticated = false;
-        this.nav.setRoot(this.homePage);
+        this.nav.setRoot(this.mapPage);
       }
     }); 
 
