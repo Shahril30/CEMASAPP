@@ -33,6 +33,7 @@
     "agm-direction": "^0.7.8",
     "angularfire2": "^5.2.1",
     "call-number": "1.0.1",
+    "cordova-plugin-brightness": "0.2.0",
     "cordova-plugin-contacts": "3.0.1",
     "cordova-plugin-nativestorage": "2.3.2",
     "firebase": "^6.3.4",
@@ -52,7 +53,8 @@
     "plugins": {
       "mx.ferreyra.callnumber": {},
       "cordova-plugin-contacts": {},
-      "cordova-plugin-nativestorage": {}
+      "cordova-plugin-nativestorage": {},
+      "cordova-plugin-brightness": {}
     }
   }
 }
