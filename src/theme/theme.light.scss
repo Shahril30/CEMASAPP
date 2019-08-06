@@ -68,14 +68,16 @@ color: #fff;
 
 #listitem1{
   border-radius:10px;
-  height:90px;
-  color:white;
+  height:160px;
+  text-align:center;
+  color:black;
 }
 
 #listitem1:hover{
-  transform: scale(1.015); 
-  opacity: 0.95;
+  transform: scale(1.005); 
+  opacity: 0.97;
 }
+
 
 #listitem1 p{
   color:white;

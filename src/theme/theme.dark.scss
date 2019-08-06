@@ -49,14 +49,15 @@
 
 #listitem1{
   border-radius:10px;
-  height:90px;
   color:black;
+  border:1px solid grey;
   text-align:center;
+  height:160px;
 }
 
 #listitem1:hover{
-  transform: scale(1.015); 
-  opacity: 0.95;
+  transform: scale(1.005); 
+  opacity: 0.97;
 }
 
 #listitem1 p{
@@ -64,20 +65,28 @@
 }
 
 
-.share1{
-  background-color:#3dc3f4;
+.hotline1{
+  background-color:white;
 }
 
-.share2{
-  background-color:#f43d3d;
+.hotline2{
+  background-color:white;
 }
 
-.share3{
-  background-color:#a1f43d;
+.hotline3{
+  background-color:white;
 }
 
-.share4{
-  background-color:#9d20f7;
+.hotline4{
+  background-color:white;
+}
+
+.hotline5{
+  background-color:white;
+}
+
+.hotline6{
+  background-color:white;
 }
 
 #buttonlist{
