@@ -24,7 +24,7 @@ export class HotlinesPage {
 
 
  	onHotlines1(){
- 	  this.callNumber.callNumber("+6737114683", true)
+ 	  this.callNumber.callNumber("7206969", true)
     .then(() => console.log('Dialer Launched!'))
     .catch(() => console.log('Error launching dialer'));
     const loading = this.loadCtrl.create({
@@ -60,7 +60,7 @@ export class HotlinesPage {
 	}
 
 	onHotlines2(){
-	this.callNumber.callNumber("+6737114683", true)
+	this.callNumber.callNumber("8251193", true)
       .then(() => console.log('Dialer Launched!'))
       .catch(() => console.log('Error launching dialer'));
           const loading = this.loadCtrl.create({
@@ -96,7 +96,7 @@ export class HotlinesPage {
 	}
 
 	onHotlines3(){
-	this.callNumber.callNumber("+6737114683", true)
+	this.callNumber.callNumber("7114683", true)
       .then(() => console.log('Dialer Launched!'))
       .catch(() => console.log('Error launching dialer'));
        const loading = this.loadCtrl.create({
@@ -132,7 +132,7 @@ export class HotlinesPage {
 	}
 
 	onHotlines4(){
-	this.callNumber.callNumber("+6737114683", true)
+	this.callNumber.callNumber("8938549", true)
       .then(() => console.log('Dialer Launched!'))
       .catch(() => console.log('Error launching dialer'));
       const loading = this.loadCtrl.create({
@@ -168,7 +168,7 @@ export class HotlinesPage {
 	}
 
 	onHotlines5(){
-	this.callNumber.callNumber("+6737114683", true)
+	this.callNumber.callNumber("7114683", true)
       .then(() => console.log('Dialer Launched!'))
       .catch(() => console.log('Error launching dialer'));
       const loading = this.loadCtrl.create({
@@ -204,7 +204,7 @@ export class HotlinesPage {
 	}
 
 	onHotlines6(){
-	this.callNumber.callNumber("+6737114683", true)
+	this.callNumber.callNumber("7114683", true)
       .then(() => console.log('Dialer Launched!'))
       .catch(() => console.log('Error launching dialer'));
       const loading = this.loadCtrl.create({

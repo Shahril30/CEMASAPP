@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Location } from '../../models/location.model';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { SirenPage } from '../siren/siren';
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',
@@ -19,11 +19,17 @@ export class MapPage {
   constructor(public navParams: NavParams,        
           private geoLocation: Geolocation,
           private loadCtrl: LoadingController,
-          private toast: ToastController
+          private toast: ToastController,
+          private navCtrl:NavController
           ) {
 
   this.marker = this.location;
   }
+
+  turnOn(){
+  this.navCtrl.push(SirenPage);
+  }
+
 
   onLocate(){
     const loading = this.loadCtrl.create({

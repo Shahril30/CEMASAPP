@@ -13,7 +13,7 @@ import { AlertPage } from '../alert/alert';
 	<ion-tabs selectedIndex="0" id="tabs">
 		<ion-tab [root]= "hotlinesPage" tabTitle="Hotlines" tabIcon="md-call"></ion-tab>
 		<ion-tab [root]= "mapPage" tabTitle="Panic" tabIcon="md-map"></ion-tab>
-		<ion-tab [root]= "contactPage" tabTitle="Contact" tabIcon="md-contacts"></ion-tab>	
+		<ion-tab [root]= "contactPage" tabTitle="Emergency Contact" tabIcon="md-contacts"></ion-tab>	
 		<ion-tab [root]= "alertPage" tabTitle="Alert" tabIcon="md-alert"></ion-tab>			
 	</ion-tabs>
 	`

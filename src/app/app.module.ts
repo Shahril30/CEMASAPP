@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 
+import { NativeAudio } from '@ionic-native/native-audio';
 import { AgmCoreModule } from '@agm/core';   // after install npm agm core import heres
 import { Geolocation } from '@ionic-native/geolocation'; // import geolocation
 import { CallNumber } from '@ionic-native/call-number';
@@ -21,6 +22,8 @@ import {HotlinesPage} from '../pages/hotlines/hotlines';
 import {MapPage} from '../pages/map/map';
 import {SettingsPage} from '../pages/settings/settings';
 import {TabsPage} from '../pages/tabs/tabs';
+import {SirenPage} from '../pages/siren/siren';
+
 
 import {AboutPage} from '../pages/about/about';
 import {QrcodePage} from '../pages/qrcode/qrcode';
@@ -64,7 +67,8 @@ const firebaseConfig={
     MyprofilePage,
     LoginPage,
     LogoutPage,
-    RegisterPage
+    RegisterPage,
+    SirenPage
   ],
   imports: [
     BrowserModule,
@@ -92,13 +96,15 @@ const firebaseConfig={
     MyprofilePage,
     LoginPage,
     LogoutPage,
-    RegisterPage
+    RegisterPage,
+    SirenPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
     CallNumber,
+    NativeAudio,
     Contacts,
     SettingsProvider,
     AuthService,

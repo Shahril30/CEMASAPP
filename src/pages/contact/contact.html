@@ -10,12 +10,12 @@
         <ion-icon name="information-circle"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Contact</ion-title>
+    <ion-title>Emergency Contact</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<h2>Contact</h2><hr>
+<h2>Emergency Contact</h2><hr>
 <ion-item *ngFor="let contact of everybody | async">
 
       <ion-icon item-start *ngIf="contact.phoneNumbers"

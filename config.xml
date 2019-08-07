@@ -103,4 +103,6 @@
     <plugin name="cordova-plugin-contacts" spec="3.0.1" />
     <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
     <plugin name="cordova-plugin-brightness" spec="0.2.0" />
+    <plugin name="cordova-plugin-nativeaudio" spec="3.0.9" />
+    <engine name="android" spec="7.1.4" />
 </widget>

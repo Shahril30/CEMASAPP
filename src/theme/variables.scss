@@ -36,17 +36,15 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
- 	primary:    #CA1717,
- 	decline:    #ff6a00,
- 	accept:    #8fdb2c,
+ 	primary:    #7d1e1e,
+ 	tabs:		#c10f0f,
+ 	decline:  	#db640f,
+ 	accept:    	#8dde0b,
   	danger:     #f53d3d,
   	active:     #fff,
-
-  	buttonBackground: #0f2e60,
-
 );
 
-$tabs-background: color($colors, primary);	
+$tabs-background: color($colors, tabs);	
 $tabs-tab-color-active: color($colors, active);
 $tabs-md-tab-color-inactive: color($colors, active);
 
