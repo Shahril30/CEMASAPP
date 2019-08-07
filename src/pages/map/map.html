@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-  	 <ion-buttons end>
+  	 <ion-buttons left>
   		<button ion-button menuToggle>
   			<ion-icon name="menu"></ion-icon>
   		</button>
@@ -9,11 +9,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-<ion-card id="formhome">
-<ion-card-content id="formin" >
+<ion-content id="contentpadding" padding>
 		<ion-row >
-		<ion-col>
+		<ion-col id="mapborder">
 			<agm-map [latitude]="location.lat" 
 					 [longitude]="location.lng" 
 					 [zoom]="16"
@@ -27,16 +25,17 @@
 	</ion-row>
 	<ion-row>
 		<ion-col>
-			<button ion-button block type="button" icon-left><ion-icon name="locate"></ion-icon>
+			<button ion-button block type="button" icon-left (click)="onLocate()"><ion-icon name="locate"></ion-icon>
 				Locate Me
 			</button>
 		</ion-col>
 	</ion-row>
 	<ion-row>
 		<ion-col>
-			<button ion-button block color="secondary" (click)="onConfirm()" [disabled]="!marker">Send Help</button>
+			<button ion-button block type="button" icon-left (click)="onReset()">Reset</button>
+		</ion-col>
+		<ion-col>
+			<button ion-button block (click)="onConfirm()" [disabled]="!marker">Send Help</button>
 		</ion-col>
 	</ion-row>
-</ion-card-content>
- </ion-card>
 </ion-content>
