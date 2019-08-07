@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
+import { NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Location } from '../../models/location.model';
 import { Geolocation } from '@ionic-native/geolocation';
 
@@ -18,8 +19,8 @@ export class MapPage {
   constructor(public navParams: NavParams,        
           private geoLocation: Geolocation,
           private loadCtrl: LoadingController,
-          private toast: ToastController,
-  			  private viewCtrl: ViewController) {
+          private toast: ToastController
+          ) {
 
   this.marker = this.location;
   }
@@ -39,6 +40,12 @@ export class MapPage {
         this.location.lng = location.coords.longitude;
         this.marker = new Location(this.location.lat, this.location.lng);
         this.locationIsSet = true;
+        const toast = this.toast.create({
+        message: "Your location is already marking.", 
+        duration: 2000,
+        position: 'bottom'
+        });
+        toast.present();
       }
       )
       .catch(  // to display errors
@@ -52,7 +59,7 @@ export class MapPage {
           console.log(error);
         }
         );
-      }
+  }
 
   onSetMarker(event: any){ 
   	this.marker = new Location(event.coords.lat, event.coords.lng);
@@ -60,10 +67,29 @@ export class MapPage {
   }
 
   onReset(){
-  	this.marker = { lat: 4.906883,lng: 114.916486 };
+    this.location = { lat: 4.906883,lng: 114.916486 };
+  	this.marker = this.location;
+    this.locationIsSet = false;
+    const toast = this.toast.create({
+    message: "Marking Location is successfully reset", 
+    duration: 2000,
+    position: 'bottom'
+    });
+    toast.present();
   }
 
-  onConfirm(){
-  	this.viewCtrl.dismiss({ location: this.marker });
-  }
+  onSubmit(form: NgForm){
+      form.reset();
+      this.location = {
+      lat: 4.906883,
+      lng: 114.916486
+    };
+      this.locationIsSet = false;
+      const toast = this.toast.create({
+      message: "Request emergency is sended. Keep patience", 
+      duration: 2000,
+      position: 'bottom'
+      });
+      toast.present();
+    }
 }

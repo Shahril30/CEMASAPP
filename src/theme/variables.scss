@@ -37,9 +37,11 @@ $app-direction: ltr;
 
 $colors: (
  	primary:    #CA1717,
-  	secondary:  #32db64,
+ 	decline:    #ff6a00,
+ 	accept:    #8fdb2c,
   	danger:     #f53d3d,
   	active:     #fff,
+
   	buttonBackground: #0f2e60,
 
 );

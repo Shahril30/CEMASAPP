@@ -5,12 +5,18 @@
   			<ion-icon name="menu"></ion-icon>
   		</button>
   	</ion-buttons>
+  	<ion-buttons right>
+      <button ion-button menuToggle>
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Panic</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content id="contentpadding" padding>
-		<ion-row >
+<ion-content padding>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+	<ion-row >
 		<ion-col id="mapborder">
 			<agm-map [latitude]="location.lat" 
 					 [longitude]="location.lng" 
@@ -32,10 +38,11 @@
 	</ion-row>
 	<ion-row>
 		<ion-col>
-			<button ion-button block type="button" icon-left (click)="onReset()">Reset</button>
+			<button ion-button block type="button" icon-left color="decline" (click)="onReset()"><ion-icon name="trash"></ion-icon> Reset</button>
 		</ion-col>
 		<ion-col>
-			<button ion-button block (click)="onConfirm()" [disabled]="!marker">Send Help</button>
+			<button ion-button block type="submit" color="accept" [disabled]="!f.valid || !locationIsSet"><ion-icon name="send"></ion-icon> Send Help</button>
 		</ion-col>
 	</ion-row>
+</form>
 </ion-content>
