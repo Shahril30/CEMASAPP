@@ -36,9 +36,8 @@ import { SettingsProvider } from '../providers/settings/settings';
 import { AuthService } from '../services/auth.services';
 import { ProfileService } from '../services/profile.service';
 import { PlacesService } from '../services/place.service';
+import { GlobalService } from '../services/global.service';
 
-
-import { SmartAudioProvider } from '../providers/smart-audio/smart-audio';
 import{IonicStorageModule}from '@ionic/storage';
 const firebaseConfig={
     apiKey: "AIzaSyD3HD6-SYijNmbosdZ4i5SnL4NdMhAqgfo",
@@ -110,8 +109,8 @@ const firebaseConfig={
     AuthService,
     ProfileService,
     PlacesService,
+    GlobalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SmartAudioProvider
   ]
 })
 export class AppModule {}

@@ -7,31 +7,27 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class ProfileService {
 
 	constructor(private db: AngularFireDatabase){}
-
-
-	private profileRef = this.db.list<Profile>('profile');
-
-	addProfile( username: string,
-		phone: number,
+	private AccountRef = this.db.list<Profile>('profile');
+	addProfile( 
+		phone: string,
 		email: string,
-		address: string){
-		return this.profileRef.push(new Profile(username, phone, email, address));
+		password:string){
+		return this.AccountRef.push(new Profile(phone, email, password));
 	}
 
 	getProfile(){
-		return this.profileRef;
+		return this.AccountRef;
 	}
 
 	editProfile(key: string,
-		username: string,
-		phone: number,
+		phone: string,
 		email: string,
-		address: string){
-		return this.profileRef.update(key, new Profile(username, phone, email, address));
+		password:string){
+		return this.AccountRef.update(key, new Profile(phone, email, password));
 	}
 
 	deleteProfile(key: string){
-		return this.profileRef.remove(key);
+		return this.AccountRef.remove(key);
 	}
 
 }

@@ -1,9 +1,8 @@
 export class Profile {  
 
 	constructor(
-		public username: string,
-		public phone: number,
+		public phone: string,
 		public email: string,
-		public address: string
+		public password: string		
 		){}
 }

@@ -19,7 +19,7 @@
 				<ion-icon name="md-home" item-left></ion-icon>
 				Home
 			</button>
-			<button ion-item (click)="onLoad(myprofilePage)">
+			<button ion-item (click)="onLoad(myprofilePage)" *ngIf="isAuthenticated">
 				<ion-icon name="md-contact" item-left></ion-icon>
 				My Profile
 			</button>
@@ -31,15 +31,15 @@
 				<ion-icon name="md-settings" item-left></ion-icon>
 				Settings
 			</button>
-			<button ion-item (click)="onLoad(registerPage)">
+			<button ion-item (click)="onLoad(registerPage)" *ngIf="!isAuthenticated">
 				<ion-icon name="md-people" item-left></ion-icon>
 				Register
 			</button>
-			<button ion-item (click)="onLoad(loginPage)">
+			<button ion-item (click)="onLoad(loginPage)" *ngIf="!isAuthenticated">
 				<ion-icon name="md-log-in" item-left></ion-icon>
 				Login
 			</button>
-			<button ion-item (click)="onLogout()">
+			<button ion-item (click)="onLogout()" *ngIf="isAuthenticated">
 				<ion-icon name="md-log-out" item-left></ion-icon>
 				Logout
 			</button>

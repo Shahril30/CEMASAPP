@@ -1,24 +1,23 @@
-import { Component } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MyprofilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Global } from '../../models/globalpass.model';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-myprofile',
   templateUrl: 'myprofile.html',
 })
-export class MyprofilePage {
+export class MyprofilePage implements OnInit{
+  	constructor(
+  	public navCtrl: NavController, 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyprofilePage');
-  }
-
+	global:Global;
+	email:string;
+ 	ngOnInit(){
+	this.global = this.navParams.get('global');
+	}
 }

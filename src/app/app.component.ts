@@ -1,4 +1,4 @@
-import { Component, ViewChild  } from '@angular/core';
+import { Component, ViewChild} from '@angular/core';
 import { Platform, MenuController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,14 +15,18 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 
 import { AuthService } from '../services/auth.services';
+import { GlobalService } from '../services/global.service';
+
 
 import { timer } from 'rxjs/observable/timer';
 import firebase from 'firebase';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp{
   showSplash = true;
   rootPage:any = TabsPage;
   homePage: any = HomePage;
@@ -45,7 +49,7 @@ export class MyApp {
 
     private authService: AuthService,
     splashScreen: SplashScreen) {
-     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+    this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
     platform.ready().then(() => {
     firebase.initializeApp({  //Firebase (dari web masukkan sini)
     apiKey: "AIzaSyD3HD6-SYijNmbosdZ4i5SnL4NdMhAqgfo",
@@ -59,7 +63,6 @@ export class MyApp {
     firebase.auth().onAuthStateChanged(user => {  // isAuthenticated (to check and redirect)
       if (user){
           this.isAuthenticated = true;
-          this.nav.setRoot(this.rootPage);
       }
       else {
         this.isAuthenticated = false;

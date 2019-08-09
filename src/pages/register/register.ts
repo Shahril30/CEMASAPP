@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth.services';
-import { LoadingController, AlertController } from 'ionic-angular';  
+import { LoadingController,NavController, ToastController, AlertController } from 'ionic-angular';  
+import { ProfileService } from '../../services/profile.service';
+import { LoginPage } from '../../pages/login/login';
 
 
 @Component({
@@ -12,8 +14,11 @@ export class RegisterPage {
 
   constructor( 
   	private authService: AuthService, 
+  	public navCtrl: NavController, 
 	private LoadingCtrl: LoadingController,
-	private alertCtrl: AlertController) {
+	private alertCtrl: AlertController,
+	private toast: ToastController,
+	public profileService:ProfileService) {
   }
 
  	onRegister(form: NgForm){ //function for signup (relate with service)
@@ -22,10 +27,22 @@ export class RegisterPage {
 			content: 'Signing you Up...'          // message on spinner
 		});
 		loading.present(); //to display loader
-
+  	
 		this.authService.signUp(form.value.email, form.value.password)
 			.then(data => {
-				loading.dismiss();
+			loading.dismiss();
+			this.profileService.addProfile(
+       		form.value.phone,
+       		form.value.email,
+        	form.value.password, 
+       		); 
+			this.navCtrl.setRoot(LoginPage);
+			  const toast = this.toast.create({
+		      message: "New account is successfully created", 
+		      duration: 2000,
+		      position: 'bottom'
+		      });
+		      toast.present();
 			})
 			.catch(error => {
 				loading.dismiss();
