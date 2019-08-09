@@ -15,10 +15,10 @@
 </ion-header>
 
 <ion-content padding>
-<ion-card id="formout">
-  <ion-card-content id="formin">
+<ion-card id="formout" >
+  <ion-card-content id="formin" *ngFor ="let user of globaluser;">
     <h1 id="heading1">Profile</h1><hr id="hrline">
-    <h2><b>Email:</b> {{global}}</h2>
+    <h2><b>Email:</b> {{user.email}}</h2>
   </ion-card-content> 
   </ion-card>
 </ion-content>

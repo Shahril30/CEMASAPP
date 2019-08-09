@@ -1,40 +1,49 @@
 import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { NavController, ToastController} from 'ionic-angular';
 import { RegisterPage } from '../register/register';
-import { MyprofilePage } from '../myprofile/myprofile';
 import { Global } from '../../models/globalpass.model';
+import { GlobalService } from '../../services/global.service';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth.services';
 import { LoadingController, AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-email:string;
-password:string;
-global:Global;
+
+globaluser: Global[]; 
   constructor(private authService: AuthService,
 			private LoadingCtrl: LoadingController,
 			private alertCtrl: AlertController,
-			public navCtrl: NavController) {}
+			public globalService:GlobalService,
+			private toast: ToastController,
+			public navCtrl: NavController,
+			private storage: Storage) {}
 
   onLoadRegister(){
 		this.navCtrl.push(RegisterPage);
 }
 
 	onLogin(form: NgForm){
-		this.email =form.value.email;
-		this.password =form.value.password;
-
 		const loading = this.LoadingCtrl.create({ //for spinner
 			content: 'Signing you In...'          // message on spinner
 		});
 		loading.present(); //to display loader
-		this.authService.signIn(this.email,this.password)
-		.then(data => {
-		this.navCtrl.push(MyprofilePage,{global:this.email});loading.dismiss();
+		this.authService.signIn(form.value.email,form.value.password)
+		.then(data => {		
+		this.globalService.addUseremail(form.value.email); 
+		this.globaluser = this.globalService.getUseremail();
+		this.storage.set('Globaluser', JSON.stringify(this.globaluser));
+		loading.dismiss();
+		const toast = this.toast.create({
+  		message: "You have successful login.", 
+  		duration: 2000,
+  		position: 'bottom'
+  		});
+  		toast.present();
 		})
 		.catch(error => {
 				loading.dismiss();

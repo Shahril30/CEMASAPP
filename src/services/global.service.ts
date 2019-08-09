@@ -1,38 +1,25 @@
-'use strict';
-
+import { Global } from '../models/globalpass.model';
 import { Injectable } from '@angular/core';
-
+ 
 @Injectable()
 export class GlobalService {
-    private $rootScope: any;
 
-    constructor() {
-        this.$rootScope = {};
+    private globalpass: Global[] = []; 
+    addUseremail(email: string){
+        this.globalpass.push(new Global(email));
     }
 
-    public get(email: string): any {
-        return this.$rootScope[email];
+    getUseremail(){
+        return this.globalpass.slice(); 
     }
 
-    public set(email: string, value: any): void {
-        this.$rootScope[email] = JSON.parse(JSON.stringify(value));
+    updateUseremail(
+        index: string,
+        email: string){
+        this.globalpass[index] = new Global(email);
     }
 
-    public setCircular(email: string, value: any): void {
-        this.$rootScope[email] = value; // JSON hack will not work here
-    }
-
-    public assign(email: string, value: any): void {
-        var data = this.get(email) || {};
-        data = Object.assign(data, value);
-        this.set(email, data);
-    }
-
-    public clear(email?: string): void {
-        if (email) {
-            delete this.$rootScope[email];
-        } else {
-            this.$rootScope = {};
-        }
+    removeUseremail(){
+        this.globalpass.splice(1);
     }
 }

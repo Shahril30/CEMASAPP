@@ -2,11 +2,10 @@ import { Component, ViewChild} from '@angular/core';
 import { Platform, MenuController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import {TabsPage} from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { MapPage } from '../pages/map/map';
-
+import { Global } from '../models/globalpass.model';
 import { MyprofilePage } from '../pages/myprofile/myprofile';
 import { AboutPage } from '../pages/about/about';
 import { SettingsProvider } from './../providers/settings/settings';
@@ -40,13 +39,14 @@ export class MyApp{
 
   isAuthenticated = false;
   selectedTheme: String;
+  globaluser:Global[];
   @ViewChild('nav') nav: NavController;
   constructor(
     platform: Platform, 
     statusBar: StatusBar, 
     private menuCtrl : MenuController,
     private settings: SettingsProvider,
-
+    public globalService:GlobalService,
     private authService: AuthService,
     splashScreen: SplashScreen) {
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
@@ -63,6 +63,7 @@ export class MyApp{
     firebase.auth().onAuthStateChanged(user => {  // isAuthenticated (to check and redirect)
       if (user){
           this.isAuthenticated = true;
+          this.nav.setRoot(this.myprofilePage);
       }
       else {
         this.isAuthenticated = false;

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 
+import { Storage} from '@ionic/storage';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { AgmCoreModule } from '@agm/core';   // after install npm agm core import heres
 import { Geolocation } from '@ionic-native/geolocation'; // import geolocation
