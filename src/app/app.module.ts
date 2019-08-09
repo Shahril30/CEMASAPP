@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
+import { Brightness } from '@ionic-native/brightness';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import { Storage} from '@ionic/storage';
 import { NativeAudio } from '@ionic-native/native-audio';
@@ -103,6 +105,8 @@ const firebaseConfig={
     StatusBar,
     SplashScreen,
     Geolocation,
+    Brightness,
+    ScreenOrientation,
     CallNumber,
     NativeAudio,
     Contacts,
