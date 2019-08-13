@@ -63,7 +63,7 @@ export class MyApp{
     firebase.auth().onAuthStateChanged(user => {  // isAuthenticated (to check and redirect)
       if (user){
           this.isAuthenticated = true;
-          this.nav.setRoot(this.myprofilePage);
+          this.nav.setRoot(this.rootPage);
       }
       else {
         this.isAuthenticated = false;

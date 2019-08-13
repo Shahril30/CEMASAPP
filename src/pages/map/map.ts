@@ -10,7 +10,6 @@ import { SirenPage } from '../siren/siren';
 })
 export class MapPage {
 
-
 	location: Location = { lat: 4.906883,lng: 114.916486 };
 	marker: Location;  
   locationIsSet = false;

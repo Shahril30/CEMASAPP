@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Import Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list><ion-searchbar></ion-searchbar></ion-list> 
+<ion-list >
+<ion-item-sliding *ngFor="let contact of contactlist | async">
+  <ion-item id="contactitem">
+       <ion-icon  item-left id="profileicon" name="md-call"></ion-icon>
+      <h2><b>{{contact.displayName}}</b></h2>
+  </ion-item>
+   <ion-item-options>
+      <button ion-button class="view" id="buttonlist">
+        <ion-icon name="md-eye"></ion-icon>
+      </button>
+        <button ion-button class="delete" id="buttonlist">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+    </ion-item-sliding>
+</ion-list>
+</ion-content>

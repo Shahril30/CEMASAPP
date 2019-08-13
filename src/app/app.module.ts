@@ -9,24 +9,23 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireModule} from 'angularfire2';
 import { Brightness } from '@ionic-native/brightness';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-
-import { Storage} from '@ionic/storage';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { AgmCoreModule } from '@agm/core';   // after install npm agm core import heres
 import { Geolocation } from '@ionic-native/geolocation'; // import geolocation
 import { CallNumber } from '@ionic-native/call-number';
+import { Diagnostic } from '@ionic-native/diagnostic';
 import { Contacts } from '@ionic-native/contacts';
 
 import {MyApp} from './app.component';
 import {HomePage } from '../pages/home/home';
 import {AlertPage} from '../pages/alert/alert';
+import { AddcontactPage } from '../pages/addcontact/addcontact';
 import {ContactPage} from '../pages/contact/contact';
 import {HotlinesPage} from '../pages/hotlines/hotlines';
 import {MapPage} from '../pages/map/map';
 import {SettingsPage} from '../pages/settings/settings';
 import {TabsPage} from '../pages/tabs/tabs';
 import {SirenPage} from '../pages/siren/siren';
-
 
 import {AboutPage} from '../pages/about/about';
 import {QrcodePage} from '../pages/qrcode/qrcode';
@@ -51,14 +50,12 @@ const firebaseConfig={
     messagingSenderId: "461302209770"
 };
 
-
-
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AlertPage,
+    AddcontactPage,
     ContactPage,
     HotlinesPage,
     MapPage,
@@ -88,6 +85,7 @@ const firebaseConfig={
     MyApp,
     HomePage,
     AlertPage,
+    AddcontactPage,
     ContactPage,
     HotlinesPage,
     MapPage,
@@ -108,6 +106,7 @@ const firebaseConfig={
     Brightness,
     ScreenOrientation,
     CallNumber,
+    Diagnostic,
     NativeAudio,
     Contacts,
     SettingsProvider,

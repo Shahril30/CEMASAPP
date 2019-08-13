@@ -15,40 +15,65 @@
 </ion-header>
 
 <ion-content padding>
-<h2>Brunei Darussalam Hotlines</h2><hr>
-  <ion-list>
-    <ion-item block id="listitem1" class="hotline1" (click)="onHotlines1()">
-      <h3><b>Ambulance - 991</b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item block id="listitem1" class="hotline2" (click)="onHotlines2()">
-      <h3><b>Police - 993</b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item block id="listitem1" class="hotline3"(click)="onHotlines3()">
-      <h3><b>Fire and Rescue - 995</b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-    <ion-item block id="listitem1" class="hotline3"(click)="onHotlines3()">
-      <h3><b>Fire and Rescue - 995</b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-     <ion-item block id="listitem1" class="hotline4" (click)="onHotlines4()">
-      <h3><b>Search and Rescue - 998</b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-       <ion-item block id="listitem1" class="hotline5" (click)="onHotlines5()">
-      <h3><b>Talian Darussalam - 123 </b></h3>
-    </ion-item>
-  </ion-list>
-  <ion-list>
-     <ion-item block id="listitem1" class="hotline6" (click)="onHotlines6()">
-      <h3><b>Talian Harapan - 145</b></h3>
-    </ion-item>
-  </ion-list>
+<h4>Brunei Darussalam Hotlines</h4><hr>
+<ion-list id="listitem">
+  <ion-row>
+    <ion-col (click)="onHotlines1()">
+        <ion-item id="listitem1" class="hotline1" >
+          <div id=imagearea>
+          <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot1.png">
+          </div>
+          <h5>Ambulance</h5>
+        </ion-item> 
+    </ion-col>
+    <ion-col (click)="onHotlines2()">
+        <ion-item id="listitem1" class="hotline2">
+          <div id=imagearea>
+          <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot2.png">
+          </div>
+          <h5>Police</h5>
+        </ion-item> 
+    </ion-col>
+   </ion-row>
+</ion-list>
+<ion-list id="listitem">
+  <ion-row>
+    <ion-col (click)="onHotlines3()">
+      <ion-item id="listitem1" class="hotline3" >
+          <div id=imagearea>
+          <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot3.png">
+          </div>
+          <h5>Fire and Rescue</h5>
+      </ion-item> 
+    </ion-col>
+    <ion-col (click)="onHotlines4()">
+        <ion-item id="listitem1" class="hotline4">
+          <div id=imagearea>
+          <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot3.png">
+          </div>
+          <h5>Search and Rescue</h5>
+        </ion-item> 
+      </ion-col>
+    </ion-row>
+</ion-list>
+<ion-list id="listitem">
+  <ion-row>
+    <ion-col (click)="onHotlines5()">
+      <ion-item id="listitem1" class="hotline5" >
+          <div id=imagearea>
+          <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot4.png">
+          </div>
+          <h5>Talian Darussalam</h5>
+      </ion-item> 
+    </ion-col>
+    <ion-col (click)="onHotlines6()">
+        <ion-item id="listitem1" class="hotline6">
+            <div id=imagearea>
+            <img alt="logo" draggable="false" height="80px" src="../../assets/imgs/hot5.png">
+            </div>
+            <h5>Talian Harapan</h5>
+        </ion-item> 
+      </ion-col>
+  </ion-row>
+</ion-list>
 </ion-content>

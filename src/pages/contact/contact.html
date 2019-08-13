@@ -6,8 +6,8 @@
   		</button>
   	</ion-buttons>
     <ion-buttons right>
-      <button ion-button menuToggle>
-        <ion-icon name="information-circle"></ion-icon>
+       <button ion-button icon-only (click)="addNewContact()">
+        <ion-icon name="md-add-circle"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Emergency Contact</ion-title>
@@ -15,17 +15,5 @@
 </ion-header>
 
 <ion-content padding>
-<h2>Emergency Contact</h2><hr>
-<ion-item *ngFor="let contact of everybody | async">
-
-      <ion-icon item-start *ngIf="contact.phoneNumbers"
-        (click)="callContact(contact.phoneNumbers[0].value)"
-        ios="ios-call"
-        md="md-call"
-        tappable></ion-icon>
-
-      <ion-label>
-        {{contact.name.givenName}}
-      </ion-label>
-    </ion-item>
+<ion-list><ion-searchbar></ion-searchbar></ion-list> 
 </ion-content>

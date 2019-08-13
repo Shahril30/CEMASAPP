@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Brightness } from '@ionic-native/brightness';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
- 
+import { Platform } from 'ionic-angular';
+import { Diagnostic } from '@ionic-native/diagnostic';
+
 @Component({
   selector: 'settings',
   templateUrl: 'settings.html'
@@ -17,6 +19,8 @@ export class SettingsPage {
   constructor(
     public navCtrl: NavController, 
     private settings: SettingsProvider,
+    private diagnostic: Diagnostic,
+    public platform: Platform,
     private brightness: Brightness,
     private screenOrientation: ScreenOrientation
     ){
@@ -51,5 +55,8 @@ export class SettingsPage {
     this.brightness.setBrightness(this.brightnessModel);
   }
 
+  checkLocation()
+  {
 
+}s
 }
